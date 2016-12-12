@@ -1,2 +1,14 @@
 <h1 style="text-align: center">Basic Lti Launch Request</h1>
-<%= render "message_info" %>
+<%# render "message_info" %>
+
+<div id="gauge" class="200x160px"></div>
+
+<script>
+  var g = new JustGage({
+    id: "gauge",
+    value: 67,
+    min: 0,
+    max: 100,
+    title: "Visitors"
+  });
+</script>
