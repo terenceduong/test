@@ -4,7 +4,9 @@ development: &default
   database: lti_tool_provider_example_development
   pool: 5
   username: postgres
-  host: postgres
+  password: postgres[8]
+  host: localhost
+  template: template0
 
 test:
   <<: *default
