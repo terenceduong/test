@@ -45,10 +45,18 @@ class MessageController < ApplicationController
   private
 
   def process_message
+    print "Finding secret ... \n"
     @secret = "&#{RailsLti2Provider::Tool.find(@lti_launch.tool_id).shared_secret}"
+    print "Secret found \n"
+    
     #TODO: should we create the lti_launch with all of the oauth params as well?
+    print "Creating the message ... \n"
     @message = (@lti_launch && @lti_launch.message) || IMS::LTI::Models::Messages::Message.generate(request.request_parameters)
+    print "Message created \n"
+    
+    print "Creating the header ... \n"
     @header = SimpleOAuth::Header.new(:post, request.url, @message.post_params, consumer_key: @message.oauth_consumer_key, consumer_secret: 'secret', callback: 'about:blank')
+    print "Header created \n"
   end
 
 end
