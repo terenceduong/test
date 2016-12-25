@@ -1,3 +1,32 @@
+# == Route Map
+#
+#                               Prefix Verb   URI Pattern                                     Controller#Action
+#                             callback POST   /callback(.:format)                             collaboration_callbacks#confirm_url
+#                                      DELETE /callback(.:format)                             collaboration_callbacks#confirm_url
+#                                 root GET    /                                               guide#home
+#                           xml_config GET    /xml_config(.:format)                           guide#xml_config
+#                          xml_builder GET    /xml_builder(.:format)                          guide#xml_builder
+#                     tool_proxy_index POST   /tool_proxy(.:format)                           tool_proxy#create
+#                          blti_launch POST   /messages/blti(.:format)                        message#basic_lti_launch_request
+#          content_item_request_launch POST   /messages/content-item(.:format)                message#content_item_selection
+#                  content_item_launch POST   /messages/content-item(.:format)                message#basic_lti_launch_request
+# messages_signed_content_item_request POST   /messages/signed_content_item_request(.:format) message#signed_content_item_request
+#                              youtube POST   /messages/youtube(.:format)                     message#youtube
+#                    tool_registration POST   /register(.:format)                             registration#register
+#                  tool_reregistration POST   /reregister(.:format)                           registration#register
+#                    save_capabilities POST   /submit_capabilities(.:format)                  registration#save_capabilities
+#                         submit_proxy GET    /submit_proxy/:registration_uuid(.:format)      registration#submit_proxy
+#                  rails_lti2_provider        /rails_lti2_provider                            RailsLti2Provider::Engine
+#                              default POST   /default(.:format)                              message#basic_lti_launch_request
+#
+# Routes for RailsLti2Provider::Engine:
+# tool_proxy_registration POST   /tool_proxy/register(.:format)                               rails_lti2_provider/tools#register
+#            submit_proxy GET    /tool_proxy/submit_registration/:registration_uuid(.:format) rails_lti2_provider/tools#submit_proxy
+#               show_tool GET    /tool_proxy/:tool_proxy_id(.:format)                         rails_lti2_provider/tools#show
+#      rereg_confirmation PUT    /tool_proxy/:tool_proxy_guid(.:format)                       rails_lti2_provider/tool#apply_rereg
+#                         DELETE /tool_proxy/:tool_proxy_guid(.:format)                       rails_lti2_provider/tool#delete_rereg
+#
+
 LtiToolProvider::Application.routes.draw do
 
   post 'callback', to: 'collaboration_callbacks#confirm_url'
