@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry', require: 'pry'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4.2'
+  gem 'annotate'
 end
 
 gem 'pg'
@@ -57,3 +58,4 @@ gem 'simple_oauth', '0.2.0'
 gem 'lodash-rails', '~> 3.7.0'
 
 gem 'therubyracer'
+

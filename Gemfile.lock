@@ -36,6 +36,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.7.1)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 12.0)
     arel (5.0.1.20140414130214)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -50,7 +53,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.11.1)
+    coffee-script-source (1.12.2)
     connection_pool (2.2.1)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -73,7 +76,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
-    kgio (2.10.0)
+    kgio (2.11.0)
     libv8 (3.16.14.17)
     lodash-rails (3.7.0)
       railties (>= 3.1)
@@ -115,7 +118,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.17.0)
-    rake (12.0.0)
+    rake (11.3.0)
     rdoc (4.3.0)
     react-rails (1.5.0)
       babel-transpiler (>= 0.7.0)
@@ -182,6 +185,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   byebug
   coffee-rails (~> 4.0.0)
   ims-lti (= 2.0.0.beta.41)
