@@ -63,3 +63,4 @@ gem 'lodash-rails', '~> 3.7.0'
 
 gem 'therubyracer'
 
+gem 'voltos'
