@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420155226) do
+ActiveRecord::Schema.define(version: 20161226095027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 20160420155226) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "iqualify_users", force: true do |t|
+    t.string   "iqualifyId"
+    t.text     "email"
+    t.string   "studentId"
+    t.text     "firstName"
+    t.text     "lastName"
+    t.string   "mobile"
+    t.boolean  "isFacilitator"
+    t.boolean  "isReadonly"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "iqualify_users", ["email"], name: "index_iqualify_users_on_email", unique: true, using: :btree
+  add_index "iqualify_users", ["iqualifyId"], name: "index_iqualify_users_on_iqualifyId", unique: true, using: :btree
+  add_index "iqualify_users", ["studentId"], name: "index_iqualify_users_on_studentId", using: :btree
 
   create_table "rails_lti2_provider_lti_launches", force: true do |t|
     t.integer  "tool_id",    limit: 8
