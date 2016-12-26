@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226095027) do
+ActiveRecord::Schema.define(version: 20161226111910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,18 @@ ActiveRecord::Schema.define(version: 20161226095027) do
   add_index "iqualify_users", ["email"], name: "index_iqualify_users_on_email", unique: true, using: :btree
   add_index "iqualify_users", ["iqualifyId"], name: "index_iqualify_users_on_iqualifyId", unique: true, using: :btree
   add_index "iqualify_users", ["studentId"], name: "index_iqualify_users_on_studentId", using: :btree
+
+  create_table "projects", force: true do |t|
+    t.string   "iqualifyId"
+    t.text     "name"
+    t.datetime "start"
+    t.datetime "end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["iqualifyId"], name: "index_projects_on_iqualifyId", using: :btree
+  add_index "projects", ["name"], name: "index_projects_on_name", using: :btree
 
   create_table "rails_lti2_provider_lti_launches", force: true do |t|
     t.integer  "tool_id",    limit: 8
