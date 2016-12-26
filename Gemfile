@@ -65,3 +65,4 @@ gem 'therubyracer'
 
 gem 'voltos'
 gem 'hirb'
+gem 'curb'

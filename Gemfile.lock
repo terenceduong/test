@@ -190,6 +190,7 @@ DEPENDENCIES
   annotate
   byebug
   coffee-rails (~> 4.0.0)
+  curb
   hirb
   ims-lti (= 2.0.0.beta.41)
   jbuilder (~> 1.2)
