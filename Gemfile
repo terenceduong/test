@@ -63,6 +63,8 @@ gem 'lodash-rails', '~> 3.7.0'
 
 gem 'therubyracer'
 
+gem 'awesome_print'
+
 gem 'voltos'
 gem 'hirb'
 gem 'curb'
