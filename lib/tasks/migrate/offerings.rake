@@ -36,9 +36,10 @@ namespace :migrate do
           end
           @new_user.save!
           @current_offering.enrolments << Enrolment.create(iqualify_user: @new_user)
-          print "Added new user: #{@new_user.firstName} #{@new_user.lastName} (#{@new_user.email})"
+          print "  Created new user: #{@new_user.firstName} #{@new_user.lastName} (#{@new_user.email}) \n"
         else
           @current_offering.enrolments << Enrolment.create(iqualify_user: IqualifyUser.find_by_iqualifyId(user['id']))
+          print "  Added existing user: #{@new_user.firstName} #{@new_user.lastName} (#{@new_user.email}) \n"
         end
       end
     end
