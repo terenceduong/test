@@ -2,17 +2,15 @@
 #
 # Table name: iqualify_users
 #
-#  id            :integer          not null, primary key
-#  iqualifyId    :string(255)
-#  email         :text
-#  studentId     :string(255)
-#  firstName     :text
-#  lastName      :text
-#  mobile        :string(255)
-#  isFacilitator :boolean
-#  isReadonly    :boolean
-#  created_at    :datetime
-#  updated_at    :datetime
+#  id         :integer          not null, primary key
+#  iqualifyId :string(255)
+#  email      :text
+#  studentId  :string(255)
+#  firstName  :text
+#  lastName   :text
+#  mobile     :string(255)
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 require 'rails_helper'
