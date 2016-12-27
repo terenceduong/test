@@ -38,8 +38,9 @@ namespace :migrate do
           @current_offering.enrolments << Enrolment.create(iqualify_user: @new_user)
           print "  Created new user: #{@new_user.firstName} #{@new_user.lastName} (#{@new_user.email}) \n"
         else
-          @current_offering.enrolments << Enrolment.create(iqualify_user: IqualifyUser.find_by_iqualifyId(user['id']))
-          print "  Added existing user: #{@new_user.firstName} #{@new_user.lastName} (#{@new_user.email}) \n"
+          matching_user = IqualifyUser.find_by_iqualifyId(user['id'])
+          @current_offering.enrolments << Enrolment.create(iqualify_user: matching_user)
+          print "  Added existing user: #{matching_user.firstName} #{matching_user.lastName} (#{matching_user.email}) \n"
         end
       end
     end
