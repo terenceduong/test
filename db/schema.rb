@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226191621) do
+ActiveRecord::Schema.define(version: 20161227120130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20161226191621) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "enrolments", force: true do |t|
+    t.integer  "offering_id"
+    t.integer  "iqualify_user_id"
+    t.boolean  "isFacilitator"
+    t.boolean  "isReadonly"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "enrolments", ["iqualify_user_id"], name: "index_enrolments_on_iqualify_user_id", using: :btree
+  add_index "enrolments", ["offering_id"], name: "index_enrolments_on_offering_id", using: :btree
 
   create_table "iqualify_users", force: true do |t|
     t.string   "iqualifyId"

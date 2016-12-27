@@ -16,4 +16,6 @@
 #
 
 class IqualifyUser < ActiveRecord::Base
+  has_many :enrolments
+  has_many :offerings, :through => :enrolments
 end

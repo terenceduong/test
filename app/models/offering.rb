@@ -12,4 +12,6 @@
 #
 
 class Offering < ActiveRecord::Base
+  has_many :enrolments
+  has_many :iqualify_users, :through => :enrolments
 end
