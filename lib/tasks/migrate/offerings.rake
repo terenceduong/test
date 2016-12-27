@@ -14,6 +14,7 @@ namespace :migrate do
         print "Created offering: #{offering['name']} \n"
       else
         @current_offering = Offering.find_by_iqualifyId(offering['id'])
+        print "Matched existing offering: #{@current_offering.name} \n"
       end
       
       # now grab the users for the offering
