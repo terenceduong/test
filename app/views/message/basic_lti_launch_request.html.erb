@@ -1,22 +1,336 @@
+<div id="container" style="min-width: 310px; max-width: 400px; height: 300px; float:left"></div>
+<div id="container-2" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto; float: left"></div>
+
 <div id="gauge1" class="200x160px"></div>
 <div id="gauge2" class="200x160px"></div>
 
 <script>
-  var g = new JustGage({
-    id: "gauge1",
-    value: 67,
-    min: 0,
-    max: 100,
-    title: "Personal"
-  });
+$(function () {
 
-  var h = new JustGage({
-    id: "gauge2",
-    value: 32,
-    min: 0,
-    max: 100,
-    title: "Team"
-  });
+    Highcharts.chart('container', {
+
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            spacingBottom: -105,
+        },
+
+        title: {
+            text: 'Personal'
+        },
+
+        pane: {
+            startAngle: -90,
+            endAngle: 90,
+            background: [{
+            	shape: 'arc'
+                // default background
+            }, {
+                backgroundColor: '#DDD',
+                borderWidth: 0,
+                outerRadius: '105%',
+                innerRadius: '103%',
+                shape: 'arc'
+            }]
+        },
+
+        // the value axis
+        yAxis: {
+            min: 1,
+            max: 5,
+
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickColor: '#666',
+
+            tickPixelInterval: 30,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: '#666',
+            labels: {
+                step: 2,
+                rotation: 'auto'
+            },
+            title: {
+                // text: 'km/h'
+            },
+            plotBands: [{
+                from: 1,
+                to: 2,
+                color: '#DF5353' // red
+            }, {
+                from: 2,
+                to: 3,
+                color: '#DDDF0D' // yellow
+            }, {
+                from: 3,
+                to: 4,
+                color: '#FFBF00' // amber
+            }, {
+                from: 4,
+                to: 5,
+                color: '#55BF3B' // green
+            }]
+        },
+
+        series: [{
+            name: 'Me',
+            data: [1.1],
+            dashStyle: 'longdash',            
+            yAxis: 0,
+                   dial: {
+                     backgroundColor: 'red',
+								     dashStyle: 'longdash'                     
+                   }
+          }, {
+            name: 'Benchmark',
+            data: [3.3],
+            yAxis: 0,
+                   dial: {
+                     backgroundColor: 'green'
+                   }            
+          }, {
+            showInLegend: true,
+            name: "Bad",
+            color: '#55BF3B' // green   
+        	}]
+    },
+    // Add some life
+    function (chart) {
+        if (!chart.renderer.forExport) {
+          var point  = chart.series[0].points[0],
+              point2 = chart.series[1].points[0],               
+              newVal,
+              inc = Math.random() / 100;
+        }
+    });
+    
+    Highcharts.chart('container-2', {
+
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false,
+            spacingBottom: -105,            
+        },
+
+        title: {
+            text: 'Personal'
+        },
+
+        pane: {
+            startAngle: -90,
+            endAngle: 90,
+            background: [{
+            	shape: 'arc'
+                // default background
+            }, {
+                backgroundColor: '#DDD',
+                borderWidth: 0,
+                outerRadius: '105%',
+                innerRadius: '103%',
+                shape: 'arc'
+            }]
+        },
+
+        // the value axis
+        yAxis: {
+            min: 1,
+            max: 5,
+
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickColor: '#666',
+
+            tickPixelInterval: 30,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: '#666',
+            labels: {
+                step: 2,
+                rotation: 'auto'
+            },
+            title: {
+                // text: 'km/h'
+            },
+            plotBands: [{
+                from: 1,
+                to: 2,
+                color: '#DF5353' // red
+            }, {
+                from: 2,
+                to: 3,
+                color: '#DDDF0D' // yellow
+            }, {
+                from: 3,
+                to: 4,
+                color: '#FFBF00' // amber
+            }, {
+                from: 4,
+                to: 5,
+                color: '#55BF3B' // green
+            }]
+        },
+
+        series: [{
+            name: 'Me',
+            data: [1.1],
+            dashStyle: 'longdash',            
+            yAxis: 0,
+                   dial: {
+                     backgroundColor: '#FF00FF',
+                   }
+          }, {
+            name: 'Benchmark',
+            data: [3.3],
+            yAxis: 0,
+                   dial: {
+                     backgroundColor: 'black'
+                   }            
+          }, {
+            showInLegend: true,
+            name: "Me",
+            color: 'red' // red   
+        	}, {
+            showInLegend: true,
+            name: "Benchmark",
+            color: 'green' // red   
+        	}]
+    },
+    // Add some life
+    function (chart) {
+        if (!chart.renderer.forExport) {
+          var point  = chart.series[0].points[0],
+              point2 = chart.series[1].points[0],               
+              newVal,
+              inc = Math.random() / 100;
+        }
+    });
+    
+    Highcharts.chart('container-3', {
+
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
+
+        title: {
+            text: 'Project'
+        },
+
+        pane: {
+            startAngle: -150,
+            endAngle: 150,
+            background: [{
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#FFF'],
+                        [1, '#333']
+                    ]
+                },
+                borderWidth: 0,
+                outerRadius: '109%'
+            }, {
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#333'],
+                        [1, '#FFF']
+                    ]
+                },
+                borderWidth: 1,
+                outerRadius: '107%'
+            }, {
+                // default background
+            }, {
+                backgroundColor: '#DDD',
+                borderWidth: 0,
+                outerRadius: '105%',
+                innerRadius: '103%'
+            }]
+        },
+
+        // the value axis
+        yAxis: {
+            min: 0,
+            max: 200,
+
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickColor: '#666',
+
+            tickPixelInterval: 30,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: '#666',
+            labels: {
+                step: 2,
+                rotation: 'auto'
+            },
+            title: {
+                text: 'km/h'
+            },
+            plotBands: [{
+                from: 0,
+                to: 120,
+                color: '#55BF3B' // green
+            }, {
+                from: 120,
+                to: 160,
+                color: '#DDDF0D' // yellow
+            }, {
+                from: 160,
+                to: 200,
+                color: '#DF5353' // red
+            }]
+        },
+
+        series: [{
+            name: 'Speed',
+            data: [80],
+            tooltip: {
+                valueSuffix: ' km/h'
+            }
+        }]
+
+    },
+    // Add some life
+    function (chart) {
+        if (!chart.renderer.forExport) {
+            setInterval(function () {
+                var point = chart.series[0].points[0],
+                    newVal,
+                    inc = Math.round((Math.random() - 0.5) * 20);
+
+                newVal = point.y + inc;
+                if (newVal < 0 || newVal > 200) {
+                    newVal = point.y - inc;
+                }
+
+                point.update(newVal);
+
+            }, 3000);
+        }
+    });      
+});
 </script>
 
 <%= render "message_info" %>
