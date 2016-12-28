@@ -1,13 +1,12 @@
-<div id="container" style="min-width: 310px; max-width: 400px; height: 300px; float:left"></div>
+<div id="container-1" style="min-width: 310px; max-width: 400px; height: 300px; float:left"></div>
 <div id="container-2" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto; float: left"></div>
+<div id="container-3" style="min-width: 310px; max-width: 400px; height: 300px; margin: 0 auto; float: left"></div>
 
-<div id="gauge1" class="200x160px"></div>
-<div id="gauge2" class="200x160px"></div>
 
 <script>
 $(function () {
 
-    Highcharts.chart('container', {
+    Highcharts.chart('container-1', {
 
         chart: {
             type: 'gauge',
@@ -124,7 +123,7 @@ $(function () {
         },
 
         title: {
-            text: 'Personal'
+            text: 'Team'
         },
 
         pane: {
@@ -219,7 +218,7 @@ $(function () {
               inc = Math.random() / 100;
         }
     });
-    
+
     Highcharts.chart('container-3', {
 
         chart: {
@@ -227,7 +226,8 @@ $(function () {
             plotBackgroundColor: null,
             plotBackgroundImage: null,
             plotBorderWidth: 0,
-            plotShadow: false
+            plotShadow: false,
+            spacingBottom: -105,            
         },
 
         title: {
@@ -235,42 +235,25 @@ $(function () {
         },
 
         pane: {
-            startAngle: -150,
-            endAngle: 150,
+            startAngle: -90,
+            endAngle: 90,
             background: [{
-                backgroundColor: {
-                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-                    stops: [
-                        [0, '#FFF'],
-                        [1, '#333']
-                    ]
-                },
-                borderWidth: 0,
-                outerRadius: '109%'
-            }, {
-                backgroundColor: {
-                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-                    stops: [
-                        [0, '#333'],
-                        [1, '#FFF']
-                    ]
-                },
-                borderWidth: 1,
-                outerRadius: '107%'
-            }, {
+            	shape: 'arc',
+              backgroundColor: '#DBDDE3',
                 // default background
             }, {
                 backgroundColor: '#DDD',
                 borderWidth: 0,
                 outerRadius: '105%',
-                innerRadius: '103%'
+                innerRadius: '103%',
+                shape: 'arc'
             }]
         },
 
         // the value axis
         yAxis: {
-            min: 0,
-            max: 200,
+            min: 1,
+            max: 5,
 
             minorTickInterval: 'auto',
             minorTickWidth: 1,
@@ -288,50 +271,63 @@ $(function () {
                 rotation: 'auto'
             },
             title: {
-                text: 'km/h'
+                // text: 'km/h'
             },
             plotBands: [{
-                from: 0,
-                to: 120,
-                color: '#55BF3B' // green
+                from: 1,
+                to: 2,
+                color: '#DF5353' // red
             }, {
-                from: 120,
-                to: 160,
+                from: 2,
+                to: 3,
                 color: '#DDDF0D' // yellow
             }, {
-                from: 160,
-                to: 200,
-                color: '#DF5353' // red
+                from: 3,
+                to: 4,
+                color: '#FFBF00' // amber
+            }, {
+                from: 4,
+                to: 5,
+                color: '#55BF3B' // green
             }]
         },
 
         series: [{
-            name: 'Speed',
-            data: [80],
-            tooltip: {
-                valueSuffix: ' km/h'
-            }
-        }]
-
+            name: 'Me',
+            data: [1.1],
+            dashStyle: 'longdash',            
+            yAxis: 0,
+                   dial: {
+                     backgroundColor: '#FF00FF',
+                   }
+          }, {
+            name: 'Benchmark',
+            data: [3.3],
+            yAxis: 0,
+                   dial: {
+                     backgroundColor: 'black'
+                   }            
+          }, {
+            showInLegend: true,
+            name: "Me",
+            color: 'red' // red   
+        	}, {
+            showInLegend: true,
+            name: "Benchmark",
+            color: 'green' // red   
+        	}]
     },
     // Add some life
     function (chart) {
         if (!chart.renderer.forExport) {
-            setInterval(function () {
-                var point = chart.series[0].points[0],
-                    newVal,
-                    inc = Math.round((Math.random() - 0.5) * 20);
-
-                newVal = point.y + inc;
-                if (newVal < 0 || newVal > 200) {
-                    newVal = point.y - inc;
-                }
-
-                point.update(newVal);
-
-            }, 3000);
+          var point  = chart.series[0].points[0],
+              point2 = chart.series[1].points[0],               
+              newVal,
+              inc = Math.random() / 100;
         }
-    });      
+    });
+
+  
 });
 </script>
 
