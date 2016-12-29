@@ -8,13 +8,15 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/tomorrow.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
       hljs.initHighlightingOnLoad();
     });
   </script>
+  <%= javascript_include_tag "wordcloud2" %>
+  
 </head>
 <body style="background-color:#DBDDE3">
 
