@@ -1,13 +1,13 @@
 <div id="container-1" style="min-width: 280px; max-width: 350px; height: 300px; float:left"></div>
 <div id="container-2" style="min-width: 280px; max-width: 350px; height: 300px; margin: 0 auto; float: left"></div>
 <div id="container-3" style="min-width: 280px; max-width: 350px; height: 300px; margin: 0 auto; float: left"></div>
+<div id="green-line" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 
 <script>
 $(function () {
 
     Highcharts.chart('container-1', {
-
         chart: {
             type: 'gauge',
             plotBackgroundColor: null,
@@ -326,6 +326,80 @@ $(function () {
               inc = Math.random() / 100;
         }
     });
+
+
+    Highcharts.chart('green-line', {
+        title: {
+            text: 'How confident are you of acting innovatively'
+        },
+        xAxis: {
+            title: {
+                enabled: true,
+                text: 'week'
+            },
+            startOnTick: true,
+            endOnTick: true,
+            showLastLabel: true,
+            min: 0,
+            max: 11,
+            minTickInterval: 1,
+            tickInterval: 1
+        },
+        yAxis: {
+            title: {
+                enabled: true,
+                text: '% confidence'
+            },
+            startOnTick: true,
+            endOnTick: true,
+            showLastLabel: true,
+            min: 0,
+            max: 100,
+            minTickInterval: 20,
+            tickInterval: 20
+        },        
+        labels: {
+            items: [{
+                html: '',
+                style: {
+                    left: '50px',
+                    top: '18px',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                }
+            }]
+        },
+        series: [{
+            type: 'spline',
+            showInLegend: false,               
+            color: 'rgba(0, 100, 0, .5)',
+            marker: {
+            	enabled: false
+            },
+            data: [[1, 0], [2, 10], [3, 20], [4, 10], [5, 5], [6, 30], [7, 20],
+                   [8, 15], [9, 40], [10, 60], [11, 80]]
+        },{
+            type: 'scatter',
+            name: 'Me',
+            color: 'rgba(223, 83, 83, .5)',
+            data: [[1, 76.4]]
+        }, {
+            type: 'scatter',
+            name: 'Everyone else',
+            color: 'rgba(119, 152, 191, .5)',
+            data: [[1.1, 51.6], [1.2, 59.0], [1.3, 49.2], [1.3, 63.0], [1.4, 53.6],
+                [1.6, 59.0], [1.5, 47.6], [1.1, 69.8], [1.2, 66.8], [1.2, 75.2],
+                [1.2, 55.2], [1.3, 54.2], [1.4, 62.5], [1.5, 42.0], [1.3, 50.0],
+                [1.2, 49.8], [1.3, 49.2], [1.4, 73.2], [1.5, 47.8], [1.3, 68.8],
+                [1.2, 50.6], [1.3, 82.5], [1.4, 57.2], [1.5, 87.8], [1.3, 72.8],
+                [1.2, 54.5], [1.3, 59.8], [1.4, 67.3], [1.5, 67.8], [1.3, 47.0],
+                [1.2, 46.2], [1.3, 55.0], [1.4, 83.0], [1.5, 54.4], [1.3, 45.8],
+                [1.2, 53.6], [1.3, 73.2], [1.4, 52.1], [1.5, 67.9], [1.3, 56.6],
+                [1.2, 62.3], [1.3, 58.5], [1.4, 54.5], [1.5, 50.2], [1.3, 60.3],
+                [1.2, 58.3], [1.3, 56.2], [1.4, 50.2], [1.5, 72.9], [1.3, 59.8],
+                [1.2, 61.0], [1.3, 69.1], [1.4, 55.9], [1.5, 46.5], [1.3, 54.3]]
+        }]
+    });
+
 
   
 });
