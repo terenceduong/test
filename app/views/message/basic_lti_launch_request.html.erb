@@ -18,22 +18,7 @@ $(function () {
     var list = [['crap', 12], ['happy', 6], ['disappointed', 43], ['sad', 23], ['angry', 19], ['joyful', 32], 
                 ['confused', 12], ['crazy', 28], ['messed up', 54] ];
 
-    WordCloud(document.getElementById('my_canvas'), { list: list } );
-
-    var can = document.getElementById('my_canvas');
-    h=parseInt(document.getElementById("my_canvas").getAttribute("height"));
-    w=parseInt(document.getElementById("my_canvas").getAttribute("width"));
-
-    // get it's context
-    hdc = can.getContext('2d');
-
-    hdc.strokeStyle = 'red';
-    hdc.lineWidth = 2;
-
-    // Fill the path
-    hdc.fillStyle = "#DBDDE3";
-    hdc.fillRect(0,0,w,h);
-    can.style.opacity = '0.9';
+    WordCloud(document.getElementById('my_canvas'), { list: list, backgroundColor: "#dbdde3" } );
 
     Highcharts.chart('container-1', {
         credits: {
