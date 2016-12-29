@@ -20,6 +20,21 @@ $(function () {
 
     WordCloud(document.getElementById('my_canvas'), { list: list } );
 
+    var can = document.getElementById('my_canvas');
+    h=parseInt(document.getElementById("my_canvas").getAttribute("height"));
+    w=parseInt(document.getElementById("my_canvas").getAttribute("width"));
+
+    // get it's context
+    hdc = can.getContext('2d');
+
+    hdc.strokeStyle = 'red';
+    hdc.lineWidth = 2;
+
+    // Fill the path
+    hdc.fillStyle = "#9ea7b8";
+    hdc.fillRect(0,0,w,h);
+    can.style.opacity = '0.2';
+
     Highcharts.chart('container-1', {
         credits: {
           enabled: false
