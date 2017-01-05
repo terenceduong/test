@@ -7,7 +7,7 @@
 #                           xml_config GET    /xml_config(.:format)                           guide#xml_config
 #                          xml_builder GET    /xml_builder(.:format)                          guide#xml_builder
 #                     tool_proxy_index POST   /tool_proxy(.:format)                           tool_proxy#create
-#                          blti_launch POST   /messages/blti(.:format)                        message#basic_lti_launch_request
+#                    learner_dashboard POST   /messages/learner_dashboard(.:format)           message#learner_dashboard
 #          content_item_request_launch POST   /messages/content-item(.:format)                message#content_item_selection
 #                  content_item_launch POST   /messages/content-item(.:format)                message#basic_lti_launch_request
 # messages_signed_content_item_request POST   /messages/signed_content_item_request(.:format) message#signed_content_item_request

@@ -13,6 +13,11 @@ messages:
       path: "/default"
       controller: "message"
       action: "basic_lti_launch_request"
+  - type: learner-dashboard
+    route:
+      path: "/default"
+      controller: "message"
+      action: "learner_dashboard"
 ### List of parameters ###
 #    parameters:
 #      - name: #the name of the parameter
