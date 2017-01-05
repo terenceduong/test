@@ -17,10 +17,11 @@ class MessageController < ApplicationController
                                               end
     @message = IMS::LTI::Models::Messages::Message.generate(request.request_parameters)
     @header = SimpleOAuth::Header.new(:post, request.url, @message.post_params, consumer_key: @message.oauth_consumer_key, consumer_secret: 'secret', callback: 'about:blank')
+    # render :basic_lti_launch_request, status: 200
     render :basic_lti_launch_request, status: 200
   end
 
-  def basic_lti_launch_request
+  def learner_dashboard
     process_message
   end
 

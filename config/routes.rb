@@ -39,7 +39,7 @@ LtiToolProvider::Application.routes.draw do
 
   resources :tool_proxy, only: [:create]
 
-  post 'messages/blti', to: 'message#basic_lti_launch_request', as: 'blti_launch'
+  post 'messages/learner_dashboard', to: 'message#learner_dashboard', as: 'learner_dashboard'
   post 'messages/content-item', to: 'message#content_item_selection', as: 'content_item_request_launch'
   post 'messages/content-item', to: 'message#basic_lti_launch_request', as: 'content_item_launch'
   post 'messages/signed_content_item_request', to: 'message#signed_content_item_request'
