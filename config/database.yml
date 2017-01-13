@@ -3,8 +3,8 @@ development: &default
   encoding: utf8
   database: lti_tool_provider_example_development
   pool: 5
-  username: terencee.d@hotmail.com
-  password: Scooters1
+  username: postgres
+  password: postgres
   host: localhost
   template: template0
 
