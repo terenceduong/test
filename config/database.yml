@@ -4,7 +4,7 @@ development: &default
   database: d9kvpnupun5tv6
   pool: 5
   username: hgidoroazkihcq
-  password: Abcd1234
+  password: 0d62c7719bd6e6735cbf6fb7361acafb443fa1c8838e5680d86945a8612819eb
   host: ec2-54-163-233-89.compute-1.amazonaws.com
   template: template0
 
