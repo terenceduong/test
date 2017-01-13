@@ -3,8 +3,8 @@ development: &default
   encoding: utf8
   database: d9kvpnupun5tv6
   pool: 5
-  username: hgidoroazkihcq
-  password: 0d62c7719bd6e6735cbf6fb7361acafb443fa1c8838e5680d86945a8612819eb
+  username: otuzpnebtdcwsn
+  password: c70a0e3328a9a0f74abbbd6a58756a3d333b027bc77114e6e0ee62f13315d9b2
   host: ec2-54-163-233-89.compute-1.amazonaws.com
   template: template0
 
