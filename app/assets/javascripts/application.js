@@ -20,3 +20,4 @@
 //= require raphael-2.1.4.min
 //= require wordcloud2
 //= require_tree .
+//= require lightbox

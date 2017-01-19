@@ -68,3 +68,5 @@ gem 'awesome_print'
 gem 'voltos'
 gem 'hirb'
 gem 'curb'
+
+gem 'lightbox2-rails'
